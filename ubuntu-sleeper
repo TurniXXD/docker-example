@@ -1,0 +1,5 @@
+FROM Ubuntu
+
+ENTRYPOINT["Sleep"]
+
+CMD["5"]
