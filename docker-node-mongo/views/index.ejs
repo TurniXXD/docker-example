@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Buy stonks</title>
+</head>
+
+<body>
+  <h1>Buy your favourite stonk</h1>
+  <form method="post" action="/item/add">
+    <label for="stonk">Stonk: </label>
+    <input type="text" name="stonk">
+    <label for="stonkamount">Amount of stonk: </label>
+    <input type="text" name="stonkamount">
+    <label for="name">Your name: </label>
+    <input type="text" name="name">
+    <label for="card">Credit card: </label>
+    <input type="text" name="card">
+    <input type="submit" value="Sell your soul">
+  </form>
+  <h4>Stonks:</h4>
+  <ul>
+    <% items.forEach(function(item) { %>
+      <li>
+        <%= item.name %>
+        <%= item.stonk %>
+        <%= item.stonkamount %>
+        <%= item.card %>
+      </li>
+      <% }); %>
+  </ul>
+</body>
+
+</html>
