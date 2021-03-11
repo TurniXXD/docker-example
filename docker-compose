@@ -1,0 +1,28 @@
+# Using docker-compose and yml config to config image to start back after every docker restart
+1. install docker compose using pip3
+2. pull seqvence/static-site image from docker hub and run it
+4. make directory for this image's directory for yml file
+3. create yml file in this directory like this:
+
+`
+# entry for static site container
+web-server:
+ container_name: web
+## source image
+ image: seqvence/static-site
+## mapping specified port
+ ports:
+  - "8080:80"
+## limiting container's memory
+ mem_limit: 500M
+## whenever the docker service starts it will start a container
+ restart: always
+`
+
+4. Start this image with:
+`docker-compose up -d`
+5. To check if you have the right config restart docker:
+`service docker restart`
+
+If your docker compose image restarted you've successed
+- Docker compose makes managing docker container easier
