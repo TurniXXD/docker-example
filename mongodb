@@ -1,0 +1,18 @@
+# Run MongoDB database in docker container
+1. Pull latest mongo image from docker hub
+'docker pull mongo:latest'
+
+2. Create directory for your MongoDB database
+
+3. Run mongo image in detach mode, 
+map port to your desired port, 
+map volumes (database collections will be saved into volumes in your created directory, thus they will survive database restart and even deleting and creating a new mongo image as long as they are in your created directory),
+assign name to container,
+specify image name and tags:
+'docker run -d -p 2717:27017 -v /docker/mongodb:/data/db --name mongodb-test mongo:latest'
+
+4. execute terminal with interactive mode in mongo container:
+'docker exec -it mongodb-test bash'
+
+5. Run mongo in mongo container and enjoy your MongoDB database:
+`mongo`
